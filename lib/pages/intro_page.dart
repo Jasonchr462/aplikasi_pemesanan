@@ -1,9 +1,10 @@
 import 'package:carousel_slider/carousel_controller.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:intro_app/pages/home_page.dart';
 
-import 'custom_filled_button.dart';
-import 'custom_text_button.dart';
+import '../custom_filled_button.dart';
+import '../custom_text_button.dart';
 
 class IntroPage extends StatefulWidget {
   const IntroPage({super.key});
@@ -18,9 +19,9 @@ class _IntroPageState extends State<IntroPage> {
   CarouselController controller = CarouselController();
 
   List<String> titles = [
-    'Grow Your\nFinancial Now',
-    'Build From\nZero to Freedom',
-    'Start Together',
+    'Bubur dan Bakmi Ayam\nBerkat',
+    'Sunter Indah Raya\nSunter',
+    'Kelapa Kopyor Raya\nKelapa Gading',
   ];
 
   List<String> subtitles = [
@@ -39,15 +40,15 @@ class _IntroPageState extends State<IntroPage> {
             CarouselSlider(
               items: [
                 Image.asset(
-                  'assets/images/img_onboarding1.png',
+                  'assets/intro1.jpg',
                   height: 322,
                 ),
                 Image.asset(
-                  'assets/images/img_onboarding2.png',
+                  'assets/intro2.jpg',
                   height: 322,
                 ),
                 Image.asset(
-                  'assets/images/img_onboarding3.png',
+                  'assets/intro3.jpg',
                   height: 322,
                 ),
               ],
@@ -109,19 +110,21 @@ class _IntroPageState extends State<IntroPage> {
                       CustomFilledButton(
                         title: 'Get Started',
                         onPressed: () {
-                          Navigator.pushNamedAndRemoveUntil(
-                              context, '/sign-up', (route) => false);
+                          Navigator.push(context,MaterialPageRoute(
+                          builder: (context) => const HomePage()
+                          )
+                          );
                         },
                       ),
                       const SizedBox(
                         height: 20,
                       ),
-                      CustomTextButton(
-                        title: 'Sign In',
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/sign-in');
-                        },
-                      ),
+                      // CustomTextButton(
+                      //   title: 'Sign In',
+                      //   onPressed: () {
+                      //     Navigator.pushNamed(context, '/sign-in');
+                      //   },
+                      // ),
                     ],
                   )
                       : Row(
