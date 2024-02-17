@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_controller.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:intro_app/pages/home_page.dart';
+import 'package:intro_app/pages/ui/dashboard_screen.dart';
 
 import '../custom_filled_button.dart';
 import '../custom_text_button.dart';
@@ -111,7 +112,7 @@ class _IntroPageState extends State<IntroPage> {
                         title: 'Get Started',
                         onPressed: () {
                           Navigator.push(context,MaterialPageRoute(
-                          builder: (context) => const HomePage()
+                          builder: (context) => const DashboardScreeen()
                           )
                           );
                         },

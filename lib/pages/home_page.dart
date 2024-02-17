@@ -6,12 +6,11 @@ import 'package:animations/animations.dart';
 import 'AppData.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  const HomePage({Key? key}) : super(key: key);
 
   static List<Widget> screens = [
     const HomePage(),
     const HomePage(),
-
   ];
 
   @override
