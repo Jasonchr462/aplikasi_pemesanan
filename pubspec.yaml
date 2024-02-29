@@ -67,7 +67,7 @@ flutter:
     - assets/images/menus/
     - assets/images/bestfood/
     - assets/images/topmenu/
-    - assets/images/popular_food/
+    - assets/images/popular_foods/
 
   #   - images/a_dot_ham.jpeg
 
