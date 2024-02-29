@@ -117,7 +117,7 @@ class PopularFoodTiles extends StatelessWidget {
                         ],
                       ),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween, //mengatur tata letak tulisan
                         children: <Widget>[
                           Container(
                             alignment: Alignment.bottomLeft,
@@ -225,6 +225,7 @@ class PopularFoodTiles extends StatelessWidget {
                     ],
                   ),
                 )),
+
           ),
         ],
       ),
