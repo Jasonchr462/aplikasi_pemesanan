@@ -8,7 +8,7 @@ class SearchWidget extends StatelessWidget {
       child: TextField(
 
         decoration: InputDecoration(
-          border: OutlineInputBorder(
+          border: const OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(5.0)),
             borderSide: BorderSide(
               width: 0,
