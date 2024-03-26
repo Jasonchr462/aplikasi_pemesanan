@@ -32,7 +32,9 @@ dependencies:
   bottom_navy_bar: ^6.0.0
   animations: ^2.0.7
   cupertino_icons: ^1.0.6
-
+  flutter_svg: ^2.0.5
+  fl_chart: ^0.62.0
+  provider: ^6.1.2
   another_carousel_pro: ^1.0.2
   font_awesome_flutter: ^10.7.0
 

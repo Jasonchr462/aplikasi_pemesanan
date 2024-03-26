@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:intro_app/pages/Dashboard/dashboard_admin.dart';
 import 'package:intro_app/pages/animation/ScaleRoute.dart';
 import 'package:intro_app/pages/ui/home_page.dart';
+import 'package:provider/provider.dart';
+
+import '../DashboardAdmin/controllers/MenuAppController.dart';
+import '../DashboardAdmin/main/main_screen.dart';
 
 class SignInPage extends StatefulWidget {
   @override
@@ -12,7 +15,8 @@ class SignInPage extends StatefulWidget {
 
 class _SignInPageState extends State<SignInPage> {
   var emailController = TextEditingController(text: "admin@gmail.com");
-  TextEditingController passwordController = TextEditingController(text: "12345");
+  TextEditingController passwordController =
+      TextEditingController(text: "12345");
 
   @override
   Widget build(BuildContext context) {
@@ -229,8 +233,21 @@ class SignInButtonWidget extends StatelessWidget {
             ),
           ),
           onPressed: () => {
-            Navigator.push(context, ScaleRoute(page: const DashboardAdmin()))
-          }),
+                // Navigator.push(context, ScaleRoute(page: const DashboardAdmin()))
+                Navigator.push(
+                    context,
+                    ScaleRoute(
+                      page: MultiProvider(
+                        providers: [
+                          ChangeNotifierProvider(
+                            create: (context) => MenuAppController(),
+                          ),
+                          // Anda bisa menambahkan provider lainnya di sini
+                        ],
+                        child: MainScreen(),
+                      ),
+                    ))
+              }),
     );
   }
 }
