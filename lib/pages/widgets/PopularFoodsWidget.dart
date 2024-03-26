@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intro_app/pages/animation/ScaleRoute.dart';
+import 'package:intro_app/pages/ui/food_details_page.dart';
 import 'package:intro_app/pages/ui/home_page.dart';
 
 
@@ -48,7 +49,7 @@ class PopularFoodTiles extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.push(context, ScaleRoute(page: HomePage())); //FoodDetailsPage
+        Navigator.push(context, ScaleRoute(page: FoodDetailsPage())); //FoodDetailsPage
       },
       child: Column(
         children: <Widget>[
