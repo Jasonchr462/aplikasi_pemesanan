@@ -324,7 +324,7 @@ class DetailContentMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Text(
-        'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero\'s De Finibus Bonorum et Malorum for use in a type specimen book.',
+        'Termasuk salah satu jenis bakmi yang terdapat di Rumah Makan Bubur Bakmi Ayam Berkat Sunter dan merupakan menu favorit yang sering dipesan oleh pelanggan. Perpaduan antara tekstur bakmi yang kenyal dan topping ayam yang berlimpah serta sayur yang segar membuat menu ini sangat direkomendasikan.',
         style: TextStyle(
             fontSize: 14.0,
             color: Colors.black87,

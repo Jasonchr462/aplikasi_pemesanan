@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intro_app/pages/animation/ScaleRoute.dart';
+import 'package:intro_app/pages/ui/food_details_page.dart';
 import 'package:intro_app/pages/ui/home_page.dart';
 
 import '../ui/food_details_page.dart';
