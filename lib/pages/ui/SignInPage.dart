@@ -10,6 +10,9 @@ class SignInPage extends StatefulWidget {
 }
 
 class _SignInPageState extends State<SignInPage> {
+  var emailController = TextEditingController(text: "admin@gmail.com");
+  TextEditingController passwordController = TextEditingController(text: "12345");
+
   @override
   Widget build(BuildContext context) {
     String defaultFontFamily = 'Roboto-Light.ttf';
@@ -55,6 +58,7 @@ class _SignInPageState extends State<SignInPage> {
                     height: 15,
                   ),
                   TextField(
+                    controller: emailController,
                     showCursor: true,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
@@ -75,13 +79,14 @@ class _SignInPageState extends State<SignInPage> {
                           color: Color(0xFF666666),
                           fontFamily: defaultFontFamily,
                           fontSize: defaultFontSize),
-                      hintText: "Phone Number",
+                      hintText: "Email",
                     ),
                   ),
                   SizedBox(
                     height: 15,
                   ),
                   TextField(
+                    controller: passwordController,
                     showCursor: true,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
@@ -145,35 +150,36 @@ class _SignInPageState extends State<SignInPage> {
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Container(
-                      child: Text(
-                        "Don't have an account? ",
-                        style: TextStyle(
-                          color: Color(0xFF666666),
-                          fontFamily: defaultFontFamily,
-                          fontSize: defaultFontSize,
-                          fontStyle: FontStyle.normal,
-                        ),
-                      ),
-                    ),
-                    InkWell(
-                      onTap: () => {
-                      Navigator.push(context, ScaleRoute(page: HomePage()))
-                      },
-                      child: Container(
-                        child: Text(
-                          "Sign Up",
-                          style: TextStyle(
-                            color: Color(0xFFf7418c),
-                            fontFamily: defaultFontFamily,
-                            fontSize: defaultFontSize,
-                            fontStyle: FontStyle.normal,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
+
+                  // children: <Widget>[
+                  //   Container(
+                  //     child: Text(
+                  //       "Don't have an account? ",
+                  //       style: TextStyle(
+                  //         color: Color(0xFF666666),
+                  //         fontFamily: defaultFontFamily,
+                  //         fontSize: defaultFontSize,
+                  //         fontStyle: FontStyle.normal,
+                  //       ),
+                  //     ),
+                  //   ),
+                  //   InkWell(
+                  //     onTap: () => {
+                  //     Navigator.push(context, ScaleRoute(page: HomePage()))
+                  //     },
+                  //     child: Container(
+                  //       child: Text(
+                  //         "Sign Up",
+                  //         style: TextStyle(
+                  //           color: Color(0xFFf7418c),
+                  //           fontFamily: defaultFontFamily,
+                  //           fontSize: defaultFontSize,
+                  //           fontStyle: FontStyle.normal,
+                  //         ),
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ],
                 ),
               ),
             )
@@ -221,7 +227,9 @@ class SignInButtonWidget extends StatelessWidget {
                   fontFamily: "WorkSansBold"),
             ),
           ),
-          onPressed: () => {}),
+          onPressed: () => {
+            Navigator.push(context, ScaleRoute(page: HomePage()))
+          }),
     );
   }
 }
