@@ -66,10 +66,12 @@ flutter:
   # assets:
   assets:
     - assets/
+    - assets/images/
     - assets/images/menus/
     - assets/images/bestfood/
     - assets/images/topmenu/
     - assets/images/popular_foods/
+    - assets/icons/
 
   #   - images/a_dot_ham.jpeg
 
