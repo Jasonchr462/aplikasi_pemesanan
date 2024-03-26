@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:intro_app/pages/Dashboard/dashboard_admin.dart';
 import 'package:intro_app/pages/animation/ScaleRoute.dart';
 import 'package:intro_app/pages/ui/home_page.dart';
 
@@ -228,7 +229,7 @@ class SignInButtonWidget extends StatelessWidget {
             ),
           ),
           onPressed: () => {
-            Navigator.push(context, ScaleRoute(page: HomePage()))
+            Navigator.push(context, ScaleRoute(page: const DashboardAdmin()))
           }),
     );
   }
