@@ -112,7 +112,7 @@ class PopularFoodTiles extends StatelessWidget {
                                 child: Image.asset(
                               'assets/images/popular_foods/' +
                                   imageUrl +
-                                  ".png",
+                                  ".jpg", //png
                               width: 130,
                               height: 140,
                             )),
@@ -270,49 +270,49 @@ class PopularFoodItems extends StatelessWidget {
       children: <Widget>[
         PopularFoodTiles(
             name: "Bakmi Karet Ayam",
-            imageUrl: "ic_popular_food_1",
+            imageUrl: "BakmiKaret", //1
             rating: '4.9',
             numberOfRating: '453',
             price: '33.500',
             slug: "bakmi_karet"),
         PopularFoodTiles(
             name: "Bakso Goreng",
-            imageUrl: "ic_popular_food_3",
+            imageUrl: "Gorengan", //3
             rating: "4.9",
             numberOfRating: "244",
             price: "10.000",
             slug: ""),
         PopularFoodTiles(
             name: "Bubur Ayam",
-            imageUrl: "ic_popular_food_4",
+            imageUrl: "BuburAyam", //4
             rating: "4.0",
             numberOfRating: "287",
             price: "23.000",
             slug: ""),
         PopularFoodTiles(
             name: "Nasi Tim",
-            imageUrl: "ic_popular_food_5",
+            imageUrl: "BakmiKaret", //5
             rating: "4.7",
             numberOfRating: "223",
             price: "30.000",
             slug: ""),
         PopularFoodTiles(
             name: "Cakwe",
-            imageUrl: "ic_popular_food_2",
+            imageUrl: "BakmiKaret", //2
             rating: "4.5",
             numberOfRating: "178",
             price: "10.000",
             slug: ""),
         PopularFoodTiles(
             name: "Bakmi Kecil Ayam",
-            imageUrl: "ic_popular_food_5",
+            imageUrl: "BakmiKaret", //5
             rating: "4.9",
             numberOfRating: "478",
             price: "33.500",
             slug: ""),
         PopularFoodTiles(
             name: "Bakmi Kecil Ayam Porsi Besar",
-            imageUrl: "ic_popular_food_6",
+            imageUrl: "BakmiKaret", //6
             rating: "4.6",
             numberOfRating: "235",
             price: "56.500",

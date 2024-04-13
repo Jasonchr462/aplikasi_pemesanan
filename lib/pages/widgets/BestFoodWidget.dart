@@ -81,7 +81,7 @@ class BestFoodTiles extends StatelessWidget {
               semanticContainer: true,
               clipBehavior: Clip.antiAliasWithSaveLayer,
               child: Image.asset(
-                'assets/images/bestfood/' + imageUrl + ".jpeg",
+                'assets/images/bestfood/' + imageUrl + ".jpg",
               ),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0),
@@ -103,77 +103,77 @@ class BestFoodList extends StatelessWidget {
       children: <Widget>[
         BestFoodTiles(
             name: "Fried Egg",
-            imageUrl: "ic_best_food_8",
+            imageUrl: "BakmiBerkat", //8
             rating: '4.9',
             numberOfRating: '200',
             price: '15.06',
             slug: "fried_egg"),
         BestFoodTiles(
             name: "Mixed vegetable",
-            imageUrl: "ic_best_food_9",
+            imageUrl: "BakmiBerkat", //9
             rating: "4.9",
             numberOfRating: "100",
             price: "17.03",
             slug: ""),
         BestFoodTiles(
             name: "Salad with chicken meat",
-            imageUrl: "ic_best_food_10",
+            imageUrl: "BakmiBerkat", //10
             rating: "4.0",
             numberOfRating: "50",
             price: "11.00",
             slug: ""),
         BestFoodTiles(
             name: "New mixed salad",
-            imageUrl: "ic_best_food_5",
+            imageUrl: "BakmiBerkat", //5
             rating: "4.00",
             numberOfRating: "100",
             price: "11.10",
             slug: ""),
         BestFoodTiles(
             name: "Red meat with salad",
-            imageUrl: "ic_best_food_1",
+            imageUrl: "BakmiBerkat", //1
             rating: "4.6",
             numberOfRating: "150",
             price: "12.00",
             slug: ""),
         BestFoodTiles(
             name: "New mixed salad",
-            imageUrl: "ic_best_food_2",
+            imageUrl: "BakmiBerkat", //2
             rating: "4.00",
             numberOfRating: "100",
             price: "11.10",
             slug: ""),
         BestFoodTiles(
             name: "Potato with meat fry",
-            imageUrl: "ic_best_food_3",
+            imageUrl: "BakmiBerkat", //3
             rating: "4.2",
             numberOfRating: "70",
             price: "23.0",
             slug: ""),
         BestFoodTiles(
             name: "Fried Egg",
-            imageUrl: "ic_best_food_4",
+            imageUrl: "BakmiBerkat", //4
             rating: '4.9',
             numberOfRating: '200',
             price: '15.06',
             slug: "fried_egg"),
         BestFoodTiles(
             name: "Red meat with salad",
-            imageUrl: "ic_best_food_5",
+            imageUrl: "BakmiBerkat", //5
             rating: "4.6",
             numberOfRating: "150",
             price: "12.00",
             slug: ""),
         BestFoodTiles(
             name: "Red meat with salad",
-            imageUrl: "ic_best_food_6",
+            imageUrl: "BakmiBerkat", //6
             rating: "4.6",
             numberOfRating: "150",
             price: "12.00",
             slug: ""),
         BestFoodTiles(
             name: "Red meat with salad",
-            imageUrl: "ic_best_food_7",
+            imageUrl: "BakmiBerkat", //7
             rating: "4.6",
             numberOfRating: "150",
             price: "12.00",

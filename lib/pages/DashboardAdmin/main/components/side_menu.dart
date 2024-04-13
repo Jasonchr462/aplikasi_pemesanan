@@ -12,53 +12,41 @@ class SideMenu extends StatelessWidget {
       child: ListView(
         children: [
           DrawerHeader(
-            child: Image.asset("assets/images/logo.png"),
+            child: Image.asset("assets/images/bestfood/BakmiBerkat.jpg"),
           ),
           DrawerListTile(
-            title: "Dashboard",
+            title: "Daftar Menu",
             svgSrc: "assets/icons/menu_dashboard.svg",
             color: Colors.blueAccent,
             press: () {},
           ),
           DrawerListTile(
-            title: "Transaction",
+            title: "Kategori Menu",
             svgSrc: "assets/icons/menu_tran.svg",
             color: Colors.blueAccent,
             press: () {},
           ),
           DrawerListTile(
-            title: "Task",
+            title: "Order",
             svgSrc: "assets/icons/menu_task.svg",
             color: Colors.blueAccent,
             press: () {},
           ),
           DrawerListTile(
-            title: "Documents",
+            title: "Dapur",
             svgSrc: "assets/icons/menu_doc.svg",
             color: Colors.blueAccent,
             press: () {},
           ),
           DrawerListTile(
-            title: "Store",
+            title: "User",
             svgSrc: "assets/icons/menu_store.svg",
             color: Colors.blueAccent,
             press: () {},
           ),
           DrawerListTile(
-            title: "Notification",
+            title: "Report",
             svgSrc: "assets/icons/menu_notification.svg",
-            color: Colors.blueAccent,
-            press: () {},
-          ),
-          DrawerListTile(
-            title: "Profile",
-            svgSrc: "assets/icons/menu_profile.svg",
-            color: Colors.blueAccent,
-            press: () {},
-          ),
-          DrawerListTile(
-            title: "Settings",
-            svgSrc: "assets/icons/menu_setting.svg",
             color: Colors.blueAccent,
             press: () {},
           ),
