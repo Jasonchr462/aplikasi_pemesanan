@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intro_app/pages/DashboardAdmin/constants.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'firebase/firebase_options.dart';
 import 'pages/intro_page.dart';
 
 // void main() {
@@ -9,7 +10,9 @@ import 'pages/intro_page.dart';
 
 void main()  {
   WidgetsFlutterBinding.ensureInitialized();
-  Firebase.initializeApp();
+  Firebase.initializeApp(
+    options: CustomFirebaseOptions.firebaseOptions,
+  );
   runApp( MyApp());
 }
 
