@@ -13,7 +13,7 @@ class _FoodOrderPageState extends State<FoodOrderPage> {
 
   void addOrderToDatabase(String productName, int quantity) {
     // Get a reference to the root of your Firebase Database
-    final DatabaseReference database = FirebaseDatabase.instance.reference();
+    final DatabaseReference database = FirebaseDatabase.instance.ref();
 
     // Create a new order with the given product name and quantity
     Map<String, dynamic> order = {
@@ -114,12 +114,19 @@ class _FoodOrderPageState extends State<FoodOrderPage> {
                 PaymentMethodWidget(),
                 SizedBox(height: 10,),
 
-                ElevatedButton(
-                  onPressed: () {
-                    addOrderToDatabase('Product Name', 1);
+                GestureDetector(
+                  onLongPress: () {
+                    // Handle the long press
+                    print('Long press detected');
                   },
-                  child: Text('Buy'),
-                ),
+
+                  child: ElevatedButton(
+                    onPressed: () {
+                      addOrderToDatabase('Product Name', 1);
+                    },
+                    child: Text('Buy'),
+                  ),
+                )
               ],
             ),
           ),

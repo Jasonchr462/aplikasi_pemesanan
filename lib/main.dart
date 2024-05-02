@@ -7,10 +7,10 @@ import 'pages/intro_page.dart';
 //   runApp(const MyApp());
 // }
 
-void main() async {
+void main()  {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  runApp(const MyApp());
+  Firebase.initializeApp();
+  runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget {
