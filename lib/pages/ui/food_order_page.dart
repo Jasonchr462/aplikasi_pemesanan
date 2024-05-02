@@ -1,3 +1,4 @@
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
@@ -9,6 +10,20 @@ class FoodOrderPage extends StatefulWidget {
 
 class _FoodOrderPageState extends State<FoodOrderPage> {
   int counter = 3;
+
+  void addOrderToDatabase(String productName, int quantity) {
+    // Get a reference to the root of your Firebase Database
+    final DatabaseReference database = FirebaseDatabase.instance.reference();
+
+    // Create a new order with the given product name and quantity
+    Map<String, dynamic> order = {
+      'productName': productName,
+      'quantity': quantity,
+    };
+
+    // Push the new order to the 'orders' node in your Firebase Database
+    database.child('orders').push().set(order);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +37,7 @@ class _FoodOrderPageState extends State<FoodOrderPage> {
               color: Color(0xFF3a3737),
             ),
             onPressed: () => Navigator.of(context).pop(),
+
           ),
           title: Center(
             child: Text(
@@ -96,6 +112,14 @@ class _FoodOrderPageState extends State<FoodOrderPage> {
                   height: 10,
                 ),
                 PaymentMethodWidget(),
+                SizedBox(height: 10,),
+
+                ElevatedButton(
+                  onPressed: () {
+                    addOrderToDatabase('Product Name', 1);
+                  },
+                  child: Text('Buy'),
+                ),
               ],
             ),
           ),
@@ -180,8 +204,8 @@ class TotalCalculationWidget extends StatelessWidget {
         ),
         child: Container(
           alignment: Alignment.center,
-          padding: EdgeInsets.only(left: 25, right: 30, top: 10, bottom: 10),
-          child: Column(
+          padding: const EdgeInsets.only(left: 25, right: 30, top: 10, bottom: 10),
+          child: const Column(
             children: <Widget>[
               SizedBox(
                 height: 15,
