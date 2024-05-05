@@ -10,10 +10,19 @@ class FoodOrderPage extends StatefulWidget {
 
 class _FoodOrderPageState extends State<FoodOrderPage> {
   int counter = 3;
+  // FirebaseDatabase database = FirebaseDatabase.instance;
 
   void addOrderToDatabase(String productName, int quantity) {
     // Get a reference to the root of your Firebase Database
     final DatabaseReference database = FirebaseDatabase.instance.ref();
+
+    // DatabaseReference ref = FirebaseDatabase.instance.ref("users/123");
+
+// Access a child of the current reference
+//     DatabaseReference child = ref.child("name");
+
+    // print(ref.key); // "123"
+    // print(ref.parent!.key); // "users"
 
     // Create a new order with the given product name and quantity
     Map<String, dynamic> order = {
@@ -21,8 +30,14 @@ class _FoodOrderPageState extends State<FoodOrderPage> {
       'quantity': quantity,
     };
 
+
+
     // Push the new order to the 'orders' node in your Firebase Database
     database.child('orders').push().set(order);
+
+    print("Cobaa ${database.key}"); // "123"
+    print("Coba2 ${database.parent!.key}");
+
   }
 
   @override
@@ -215,7 +230,7 @@ class TotalCalculationWidget extends StatelessWidget {
           child: const Column(
             children: <Widget>[
               SizedBox(
-                height: 15,
+                height: 14,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
