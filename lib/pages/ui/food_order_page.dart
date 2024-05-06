@@ -14,29 +14,33 @@ class _FoodOrderPageState extends State<FoodOrderPage> {
 
   void addOrderToDatabase(String productName, int quantity) {
     // Get a reference to the root of your Firebase Database
-    final DatabaseReference database = FirebaseDatabase.instance.ref();
+    // final DatabaseReference database = FirebaseDatabase.instance.ref();
 
-    // DatabaseReference ref = FirebaseDatabase.instance.ref("users/123");
+    DatabaseReference ref = FirebaseDatabase.instance.ref("orders");
 
 // Access a child of the current reference
-//     DatabaseReference child = ref.child("name");
+    DatabaseReference child = ref.child("");
 
-    // print(ref.key); // "123"
-    // print(ref.parent!.key); // "users"
+
+    print("Cobaa ${ref.key}"); //
+    print(ref.parent!.key); //
+
+
 
     // Create a new order with the given product name and quantity
     Map<String, dynamic> order = {
       'productName': productName,
       'quantity': quantity,
     };
+    ref.child('orders').push().set(order);
 
 
 
     // Push the new order to the 'orders' node in your Firebase Database
-    database.child('orders').push().set(order);
+    // database.child('orders').push().set(order);
 
-    print("Cobaa ${database.key}"); // "123"
-    print("Coba2 ${database.parent!.key}");
+    // print("Cobaa ${database.key}"); // "123"
+    // print("Coba2 ${database.parent!.key}");
 
   }
 
@@ -129,19 +133,20 @@ class _FoodOrderPageState extends State<FoodOrderPage> {
                 PaymentMethodWidget(),
                 SizedBox(height: 10,),
 
-                GestureDetector(
-                  onLongPress: () {
-                    // Handle the long press
-                    print('Long press detected');
-                  },
+                // GestureDetector(
+                  // onLongPress: () {
+                  //   // Handle the long press
+                  //   print('Long press detected');
+                  // },
 
-                  child: ElevatedButton(
+                  // child:
+                  ElevatedButton(
                     onPressed: () {
                       addOrderToDatabase('Product Name', 1);
                     },
-                    child: Text('Buy'),
-                  ),
-                )
+                    child: const Text('Buy'),
+                  )
+                // )
               ],
             ),
           ),
@@ -526,7 +531,7 @@ class AddToCartMenu extends StatelessWidget {
             iconSize: 18,
           ),
           InkWell(
-            onTap: () => print('hello'),
+            // onTap: () => print('hello'),
             child: Container(
               width: 100.0,
               height: 35.0,
