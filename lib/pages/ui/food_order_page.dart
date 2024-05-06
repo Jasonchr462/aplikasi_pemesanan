@@ -12,35 +12,22 @@ class _FoodOrderPageState extends State<FoodOrderPage> {
   int counter = 3;
   // FirebaseDatabase database = FirebaseDatabase.instance;
 
-  void addOrderToDatabase(String productName, int quantity) {
+  void addOrderToDatabase(String productName, int productCartQuantity) {
     // Get a reference to the root of your Firebase Database
     // final DatabaseReference database = FirebaseDatabase.instance.ref();
 
-    DatabaseReference ref = FirebaseDatabase.instance.ref("orders");
+    DatabaseReference ref = FirebaseDatabase.instance.ref();
 
 // Access a child of the current reference
     DatabaseReference child = ref.child("");
 
-
-    print("Cobaa ${ref.key}"); //
-    print(ref.parent!.key); //
-
-
-
     // Create a new order with the given product name and quantity
     Map<String, dynamic> order = {
       'productName': productName,
-      'quantity': quantity,
+      'quantity': productCartQuantity,
     };
     ref.child('orders').push().set(order);
 
-
-
-    // Push the new order to the 'orders' node in your Firebase Database
-    // database.child('orders').push().set(order);
-
-    // print("Cobaa ${database.key}"); // "123"
-    // print("Coba2 ${database.parent!.key}");
 
   }
 
@@ -93,18 +80,25 @@ class _FoodOrderPageState extends State<FoodOrderPage> {
                   height: 10,
                 ),
                 CartItem(
-                    productName: "Bakmi Karet",
-                    productPrice: "\Rp33.500",
-                    productImage: "BakmiKaret",
-                    productCartQuantity: "2"),
+                  productName: "Bakmi Karet",
+                  productPrice: "\Rp33.500",
+                  productImage: "BakmiKaret",
+                  productCartQuantity: "2",
+                  onBuy: () {
+                    addOrderToDatabase("Bakmi Karet", 2);
+                  },
+                ),
                 SizedBox(
                   height: 10,
                 ),
                 CartItem(
-                    productName: "Bakso Goreng",
-                    productPrice: "\Rp10.000",
-                    productImage: "Gorengan",
-                    productCartQuantity: "5"),
+                  productName: "Bakso Goreng",
+                  productPrice: "\Rp10.000",
+                  productImage: "Gorengan",
+                  productCartQuantity: "5",
+                  onBuy: () {
+                    addOrderToDatabase("Bakso Goreng", 5);
+                  },),
                 SizedBox(
                   height: 10,
                 ),
@@ -133,20 +127,22 @@ class _FoodOrderPageState extends State<FoodOrderPage> {
                 PaymentMethodWidget(),
                 SizedBox(height: 10,),
 
-                // GestureDetector(
-                  // onLongPress: () {
-                  //   // Handle the long press
-                  //   print('Long press detected');
-                  // },
+                ElevatedButton(
+                  onPressed: () {
+                    addOrderToDatabase("Bakmi Karet", 2);
+                    addOrderToDatabase("Bakso Goreng", 5);
+                  },
+                  child: const Text('Buy'),
+                ),
 
-                  // child:
-                  ElevatedButton(
-                    onPressed: () {
-                      addOrderToDatabase('Product Name', 1);
-                    },
-                    child: const Text('Buy'),
-                  )
+                // child:
+                // ElevatedButton(
+                //   onPressed: () {
+                //     onBuy;
+                //   },
+                //   child: const Text('Buy'),
                 // )
+
               ],
             ),
           ),
@@ -358,6 +354,7 @@ class CartItem extends StatelessWidget {
   String productPrice;
   String productImage;
   String productCartQuantity;
+  final VoidCallback onBuy;
 
   CartItem({
     Key? key,
@@ -365,6 +362,7 @@ class CartItem extends StatelessWidget {
     required this.productPrice,
     required this.productImage,
     required this.productCartQuantity,
+    required this.onBuy,
   }) : super(key: key);
 
   @override
@@ -399,69 +397,75 @@ class CartItem extends StatelessWidget {
                     alignment: Alignment.centerLeft,
                     child: Center(
                         child: Image.asset(
-                      "assets/images/popular_foods/$productImage.jpg", //png
-                      width: 110,
-                      height: 100,
-                    )),
+                          "assets/images/popular_foods/$productImage.jpg", //png
+                          width: 110,
+                          height: 100,
+                        )),
                   ),
                 ),
-                Column(
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    SizedBox(
-                      height: 5,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: <Widget>[
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Container(
-                              child: Text(
-                                "$productName",
-                                style: TextStyle(
-                                    fontSize: 18,
-                                    color: Color(0xFF3a3a3b),
-                                    fontWeight: FontWeight.w400),
-                                textAlign: TextAlign.left,
+                Expanded(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: <Widget>[
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Container(
+                                child: Text(
+                                  "$productName",
+                                  style: TextStyle(
+                                      fontSize: 18,
+                                      color: Color(0xFF3a3a3b),
+                                      fontWeight: FontWeight.w400),
+                                  textAlign: TextAlign.left,
+                                ),
                               ),
-                            ),
-                            SizedBox(
-                              height: 5,
-                            ),
-                            Container(
-                              child: Text(
-                                "$productPrice",
-                                style: TextStyle(
-                                    fontSize: 18,
-                                    color: Color(0xFF3a3a3b),
-                                    fontWeight: FontWeight.w400),
-                                textAlign: TextAlign.left,
+                              SizedBox(
+                                height: 5,
                               ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          width: 40,
-                        ),
-                        Container(
-                          alignment: Alignment.centerRight,
-                          child: Image.asset(
-                            "assets/images/menus/ic_delete.png",
-                            width: 25,
-                            height: 25,
+                              Container(
+                                child: Text(
+                                  "$productPrice",
+                                  style: TextStyle(
+                                      fontSize: 18,
+                                      color: Color(0xFF3a3a3b),
+                                      fontWeight: FontWeight.w400),
+                                  textAlign: TextAlign.left,
+                                ),
+                              ),
+                            ],
                           ),
-                        )
-                      ],
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(left: 20),
-                      alignment: Alignment.centerRight,
-                      child: AddToCartMenu(2),
-                    )
-                  ],
+                          SizedBox(
+                            width: 40,
+                          ),
+                          Container(
+                            alignment: Alignment.centerRight,
+                            child: Image.asset(
+                              "assets/images/menus/ic_delete.png",
+                              width: 25,
+                              height: 25,
+                            ),
+                          )
+                        ],
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(left: 20),
+                        alignment: Alignment.centerRight,
+                        child: AddToCartMenu(2),
+                      ),
+                      // ElevatedButton(
+                      //   onPressed: onBuy,
+                      //   child: const Text('Buy'),
+                      // ),
+                    ],
+                  ),
                 )
               ],
             ),
