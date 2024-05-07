@@ -1,14 +1,14 @@
 {
   "project_info": {
-    "project_number": "944733211622",
-    "firebase_url": "https://order-app-1341d-default-rtdb.asia-southeast1.firebasedatabase.app",
-    "project_id": "order-app-1341d",
-    "storage_bucket": "order-app-1341d.appspot.com"
+    "project_number": "132157081374",
+    "firebase_url": "https://aplikasipemesanan-a60e7-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "aplikasipemesanan-a60e7",
+    "storage_bucket": "aplikasipemesanan-a60e7.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:944733211622:android:4c0b14d752f87f0177e427",
+        "mobilesdk_app_id": "1:132157081374:android:cb6e3c4cc9b2fa73cfab0f",
         "android_client_info": {
           "package_name": "com.example.intro_app"
         }
@@ -16,7 +16,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBsD-Foc4X0uDOrlv47aFt1DZOiQsxjo98"
+          "current_key": "AIzaSyBRMglzI8-IDm2eTZoIYg8F0jeFnjeTqxQ"
         }
       ],
       "services": {
